@@ -2,7 +2,7 @@ var Test = new Meteor.Collection('test');
 
 if (Meteor.isClient) {
   Meteor.startup(function () {
-    Meteor.autorun(function () {
+    Deps.autorun(function () {
       Meteor.subscribe('test', Session.get('value'), {
         onError: function (error) { console.log(error.reason || "Bug!"); }
       });
